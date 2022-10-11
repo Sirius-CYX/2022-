@@ -29,3 +29,4 @@ def read_data(tablename):
 
     # 关闭数据库连接
     conn.close()
+#

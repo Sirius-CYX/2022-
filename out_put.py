@@ -11,7 +11,7 @@ for num in range(1,6):
             create table %s(
             id int,
             name varchar(20),
-            pl varchar(20)
+            plan varchar(20)
             )
             """ % plansname
     cursor.execute(sql1)
@@ -37,7 +37,7 @@ def output(plans,plan):
             if(read.id[j]==i):
                 conn = pymysql.connect(host='localhost', port=3306, user='root', password='123456', charset='utf8',db='student')
                 cursor = conn.cursor()
-                sql5 = """insert into %s(id,name,pl) values ('%d','%s','%s')""" % (plans,read.id[j],read.name[j],plan[j])
+                sql5 = """insert into %s(id,name,plan) values ('%d','%s','%s')""" % (plans,read.id[j],read.name[j],plan[j])
                 cursor.execute(sql5)
                 conn.commit()
                 conn.close()

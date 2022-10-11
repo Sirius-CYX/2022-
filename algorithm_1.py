@@ -66,4 +66,4 @@ AVE=all/5
 print("AVE=%f"%AVE)
 out_put.put_AVE(AVE)
 
-
+#
