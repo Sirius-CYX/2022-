@@ -39,8 +39,8 @@ for i in range(70,90):
         if plan[i][j] == '1':
             total = total + 1
 
-print(read.situation)
-print(plan)
+#print(read.situation)
+#print(plan)
 print(number)
 print(total)
 print(badguy)

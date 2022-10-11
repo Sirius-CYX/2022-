@@ -25,19 +25,19 @@ def create():
                 s = ''.join(t)
                 situation[j - 1] = s
 
-        def limit(num):
-            if num > 4:
-                return 4
-            if num < 0:
-                return 0
+    def limit(num):
+        if num > 4:
+            return 4
+        if num < 0:
+            return 0
 
-            return num
+        return num
 
         #x = []
-        for i in range(90):
-            a = np.random.normal(loc=2.8, scale=0.5, size=None)
-            b = limit(a)
-            c = round(b, 2)
-            x.append(c)
-        x.sort(reverse=True)
+    for i in range(90):
+        a = np.random.normal(loc=2.8, scale=0.5, size=None)
+        b = limit(a)
+        c = round(b, 2)
+        x.append(c)
+    x.sort(reverse=True)
 
