@@ -1,8 +1,12 @@
 import numpy as np
 import random
-situation = np.array(['11111111111111111111' for _ in range(90)], dtype=object) # 到勤情况
-x=[]
+
+
 def create():
+    global x
+    global situation
+    x = []
+    situation = np.array(['11111111111111111111' for _ in range(90)], dtype=object)  # 到勤情况
     Convict = random.randint(5, 8)  # 生成随机数
     prisoner = random.sample(range(71, 91), Convict)  # 这个数组是问题学生
 
