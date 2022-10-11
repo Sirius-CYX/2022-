@@ -1,10 +1,11 @@
 import numpy as np
 import random
-
-def random_create():
+situation = np.array(['11111111111111111111' for _ in range(90)], dtype=object) # 到勤情况
+x=[]
+def create():
     Convict = random.randint(5, 8)  # 生成随机数
     prisoner = random.sample(range(71, 91), Convict)  # 这个数组是问题学生
-    situation = np.array(['11111111111111111111' for _ in range(90)], dtype=object)  # 到勤情况
+
 
     for i in prisoner:
         ran = random.sample(range(1, 91), 90)
@@ -13,16 +14,16 @@ def random_create():
         salt = ''.join(nums)
         situation[i - 1] = salt
 
-        for i in range(20):
-            innocent = random.randint(0, 3)
-            goodguy = random.sample(range(1, 91), innocent)  # 请假的人的序号
-            for j in goodguy:
-                if j not in prisoner:
-                    s = situation[j - 1]
-                    t = list(s)
-                    t[i] = '0'
-                    s = ''.join(t)
-                    situation[j - 1] = s
+    for i in range(20):
+        innocent = random.randint(0, 3)
+        goodguy = random.sample(range(1, 91), innocent)  # 请假的人的序号
+        for j in goodguy:
+            if j not in prisoner:
+                s = situation[j - 1]
+                t = list(s)
+                t[i] = '0'
+                s = ''.join(t)
+                situation[j - 1] = s
 
         def limit(num):
             if num > 4:
@@ -32,7 +33,7 @@ def random_create():
 
             return num
 
-        x = []
+        #x = []
         for i in range(90):
             a = np.random.normal(loc=2.8, scale=0.5, size=None)
             b = limit(a)
@@ -40,4 +41,3 @@ def random_create():
             x.append(c)
         x.sort(reverse=True)
 
-random_create()
